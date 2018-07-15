@@ -35,8 +35,18 @@ public class FXMLDocumentController implements Initializable {
     }
     
     @FXML
+    private void next(){
+        soundbite.next();
+    }
+    
+    @FXML
+    private void previous(){
+        soundbite.previous();
+    }
+    
+    @FXML
     private void fileSelect(ActionEvent event) throws IOException{
-      soundbite.fileSelect();
+       soundbite.fileSelect();
     }
     
     @FXML

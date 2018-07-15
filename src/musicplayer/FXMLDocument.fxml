@@ -17,6 +17,8 @@
             <Button mnemonicParsing="false" onAction="#pause" text="Pause" />
             <Button mnemonicParsing="false" text="Repeat" />
             <Button layoutX="575.0" layoutY="17.0" mnemonicParsing="false" text="Shuffle" />
+            <Button mnemonicParsing="false" onAction="#next" text="Next" />
+            <Button layoutX="574.0" layoutY="17.0" mnemonicParsing="false" onAction="#previous" text="Previous" />
          </buttons>
       </ButtonBar>
       <MenuBar layoutX="105.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
