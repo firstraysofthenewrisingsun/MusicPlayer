@@ -6,24 +6,22 @@
 package musicplayer;
 import java.io.*;
 import jaco.mp3.player.MP3Player;
-import java.awt.Desktop;
 import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 /**
  *
  * @author anameplease
  */
 public class mp3 {
-    private final MP3Player media;
-    private final String playThis;
-    private final FileChooser choice;
+    private MP3Player media;
+    private File playThis;
+    private FileChooser choice;
+    private Stage s = new Stage();
   
    
     
-    public mp3(String playThis){
-        this.media = new MP3Player();
-        this.playThis = playThis;
-        this.choice = new FileChooser();
-        
+    public mp3(){
+     
     }
     
     
@@ -36,7 +34,15 @@ public class mp3 {
        media.pause();
     }
     
-    
+    public void fileSelect() throws IOException{
+        choice = new FileChooser();
+        playThis = choice.showOpenDialog(s);
+        if (playThis != null){
+        
+        }
+        
+        media = new MP3Player(playThis);
+    }
  
     
     

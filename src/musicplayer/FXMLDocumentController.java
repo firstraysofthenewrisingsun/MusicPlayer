@@ -23,46 +23,24 @@ import jaco.mp3.player.MP3Player;
  */
 public class FXMLDocumentController implements Initializable {
     
+   
     @FXML
-    public String soundfile;
-    
-    @FXML
-    public MP3Player JukeBox;
-    
-    @FXML
-    private FileChooser chooser;
-    
-    @FXML
-    private File file;
-    
-    @FXML
-    private final Stage s = new Stage();
-    
+    mp3 soundbite = new mp3();
      
-    
-    
-    
     
     @FXML
     private void play(ActionEvent event){
-      
-      JukeBox.play();
-      
+      soundbite.play();
     }
     
     @FXML
     private void pause(ActionEvent event) {
-        JukeBox.pause();
+     soundbite.pause();
     }
     
     @FXML
     private void fileSelect(ActionEvent event) throws IOException{
-       chooser = new FileChooser();
-       file = chooser.showOpenDialog(s);
-       if (file != null) {
-         
-       }
-       JukeBox = new MP3Player(file);
+      soundbite.fileSelect();
     }
     
     @Override
