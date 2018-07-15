@@ -5,13 +5,10 @@
  */
 package musicplayer;
 
-import java.io.File;
-import java.io.IOException;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 /**
@@ -19,8 +16,6 @@ import javafx.stage.Stage;
  * @author anameplease
  */
 public class MusicPlayer extends Application {
-    
-    public static Stage newstage;
     
     @Override
     public void start(Stage stage) throws Exception {
@@ -40,12 +35,5 @@ public class MusicPlayer extends Application {
     public static void main(String[] args) {
         launch(args);
     }
-    
-    public Stage getStage(){
-    return newstage;
-    }
-    
-    public void setStage(Stage stage) throws IOException{
-        newstage = stage;
-    }
+  
 }

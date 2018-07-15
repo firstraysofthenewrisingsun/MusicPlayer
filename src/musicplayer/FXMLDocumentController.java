@@ -5,16 +5,12 @@
  */
 package musicplayer;
 
-import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.stage.FileChooser;
-import javafx.stage.Stage;
-import jaco.mp3.player.MP3Player;
 
 
 /**
@@ -41,6 +37,11 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private void fileSelect(ActionEvent event) throws IOException{
       soundbite.fileSelect();
+    }
+    
+    @FXML
+    private void multiSelect(ActionEvent event) throws IOException{
+        soundbite.multiSelect();
     }
     
     @Override

@@ -1,14 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
 <AnchorPane id="AnchorPane" fx:id="mainPage" prefHeight="450.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="musicplayer.FXMLDocumentController">
    <children>
-      <Button layoutX="294.0" layoutY="212.0" mnemonicParsing="false" onAction="#play" text="Play" />
       <Text layoutX="260.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Test Music Player" />
-      <Button layoutX="288.0" layoutY="256.0" mnemonicParsing="false" onAction="#pause" text="Pause" />
-      <Button layoutX="274.0" layoutY="297.0" mnemonicParsing="false" onAction="#fileSelect" text="File Select" />
+      <ButtonBar layoutX="225.0" layoutY="410.0" prefHeight="40.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <buttons>
+            <Button mnemonicParsing="false" onAction="#play" text="Play" />
+            <Button mnemonicParsing="false" onAction="#pause" text="Pause" />
+            <Button mnemonicParsing="false" text="Repeat" />
+            <Button layoutX="575.0" layoutY="17.0" mnemonicParsing="false" text="Shuffle" />
+         </buttons>
+      </ButtonBar>
+      <MenuBar layoutX="105.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Menu">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#fileSelect" text="Open MP3" />
+                  <MenuItem mnemonicParsing="false" onAction="#multiSelect" text="Open PlayList" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
    </children>
 </AnchorPane>
