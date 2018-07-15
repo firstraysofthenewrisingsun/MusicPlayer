@@ -18,6 +18,8 @@ public class mp3 {
     private MP3Player media;
     private MP3Player media2;
     private Alert hey;
+    private Alert hold;
+    private Alert buzz;
     private File playThis;
     private List<File> thesePlease;
     private FileChooser choice;
@@ -52,7 +54,6 @@ public class mp3 {
         } else if (null == playThis){
             
             hey = new Alert(Alert.AlertType.WARNING);
-            hey.setTitle("Oops!");
             hey.setContentText("Please select a song.");
             hey.showAndWait();
             
@@ -62,10 +63,21 @@ public class mp3 {
     }
     
     public void multiSelect() throws IOException{
+        hold = new Alert(Alert.AlertType.INFORMATION);
+        hold.setContentText("Please select up to three files");
+        hold.showAndWait();
+               
         choices = new FileChooser();
         thesePlease = choices.showOpenMultipleDialog(t);
-        if (thesePlease != null){
         
+        if (thesePlease != null){
+        media2 = new MP3Player(thesePlease.get(0), thesePlease.get(1), thesePlease.get(2));
+        } else if (null == thesePlease){
+            
+            buzz = new Alert(Alert.AlertType.ERROR);
+            buzz.setContentText("Please select some songs.");
+            buzz.showAndWait();
+            
         }
         
     }
