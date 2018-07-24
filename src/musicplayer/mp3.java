@@ -6,10 +6,14 @@
 package musicplayer;
 import java.io.*;
 import jaco.mp3.player.MP3Player;
+import jaco.mp3.player.plaf.MP3PlayerUI;
+import jaco.mp3.player.plaf.MP3PlayerUICompact;
 import java.util.List;
 import javafx.scene.control.Alert;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import javax.swing.BorderFactory;
+import javax.swing.JFrame;
 /**
  *
  * @author anameplease
@@ -28,6 +32,8 @@ public class mp3 {
     private Stage t = new Stage();
     private boolean singletrack;
     private boolean multitrack;
+    
+    
   
    
     
@@ -69,11 +75,12 @@ public class mp3 {
     }
     
     public void shuffle(){
-      
+        
     }
     
     
     public void fileSelect() throws IOException{
+        MP3Player.setDefaultUI(MP3PlayerUICompact.class);
         
             choice = new FileChooser();
             playThis = choice.showOpenDialog(s);
@@ -83,6 +90,16 @@ public class mp3 {
             media = new MP3Player(playThis);
          
             singletrack = true;
+            
+                media.setBorder(BorderFactory.createEmptyBorder(50, 100, 50, 100));
+            
+                JFrame frame = new JFrame("MP3 Player");
+                frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+                frame.getContentPane().add(media);
+                frame.pack();
+                frame.setLocationRelativeTo(null);
+                frame.setVisible(true);
+               
             
         } else if (null == playThis){
             
