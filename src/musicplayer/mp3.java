@@ -94,7 +94,7 @@ public class mp3 {
                 media.setBorder(BorderFactory.createEmptyBorder(50, 100, 50, 100));
             
                 JFrame frame = new JFrame("MP3 Player");
-                frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.getContentPane().add(media);
                 frame.pack();
                 frame.setLocationRelativeTo(null);
