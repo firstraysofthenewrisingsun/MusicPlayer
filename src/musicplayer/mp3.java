@@ -7,7 +7,6 @@ package musicplayer;
 import java.io.*;
 import jaco.mp3.player.MP3Player;
 import jaco.mp3.player.plaf.MP3PlayerUI;
-import jaco.mp3.player.plaf.MP3PlayerUICompact;
 import java.util.List;
 import javafx.scene.control.Alert;
 import javafx.stage.FileChooser;
@@ -80,7 +79,7 @@ public class mp3 {
     
     
     public void fileSelect() throws IOException{
-        MP3Player.setDefaultUI(MP3PlayerUICompact.class);
+        MP3Player.setDefaultUI(MP3PlayerUI.class);
         
             choice = new FileChooser();
             playThis = choice.showOpenDialog(s);
